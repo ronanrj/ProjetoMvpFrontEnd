@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Auto Escola</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <nav>
+        <p class="brand">Gerenciar<strong> Auto Escola</strong></p>
+        <ul>
+          <li><a href="#escola">Auto Escolas</a></li>
+          <li><a href="#instrutor">Instrutores</a></li>
+          <li><a href="#carro">Carros</a></li>
+        </ul>
+      </nav>
+      <div class="header-block">
+        <div class="text">
+          <h2>
+            Sistema central de CFC
+          </h2>
+          <p>Este é um projeto de um sistema de cadastro de auto escola - Centro de formação de condutores.</p>
+        </div>
+        <img src="images/car-header.png" alt="Car">
+      </div>
+    </div>
+  </header>
+  <section class="catalog" id="">
+    <div class="content">
+      <div class="title-wrapper-catalog">
+        <p>Buscar Auto escola</p>
+        <h3>Auto Escola por Codigo</h3>
+      </div>
+      <div class="filter-card">
+        <input type="text" class="search-input" placeholder="Escolha por codigo" id="searchCfc">
+        <button onclick="getCfcId()" class="search-button">Procurar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="">
+    <div class="content">
+      <div class="title-wrapper-catalog-insert">
+        <p>Inserir uma nova auto escola</p>
+        <h3>Nova CFC</h3>
+      </div>
+      <div class="filter-card-insert">
+        <input type="text" id="newCnpj" class="search-input-insert" placeholder="CNPJ">
+        <input type="text" id="newCodigo" class="search-input-insert" placeholder="Codigo">
+        <input type="text" id="newNome" class="search-input-insert" placeholder="Nome">
+        <input type="text" id="newRegiao" class="search-input-insert" placeholder="Regiao">
+        <input type="text" id="newStatus" class="search-input-insert" placeholder="Status / true of false">
+        <button onclick="newItem()" class="search-button">Adicionar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="escola">
+    <div class="content">
+      <div class="title-wrapper-about">
+        <p>Tabela referente a </p>
+        <h3>Auto Escolas</h3>
+      </div>
+      <div class="about-content">
+        <div class="left">
+          <img src="images/about.png" alt="About" />
+        </div>
+        <div class="right">
+          <table id="myTable">
+            <tr>
+              <th>Id</th>
+              <th>Cnpj</th>
+              <th>Codigo</th>
+              <th>Nome</th>
+              <th>Regiao</th>
+              <th>Status</th>
+              <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="instrutor" id="instrutor">
+    <div class="content">
+      <div class="title-wrapper-catalog-insert">
+        <p>Inserir um novo instrutor</p>
+        <h3>Novo Instrutor</h3>
+      </div>
+      <div class="content">
+        <div class="filter-card-insert-instrutor">
+          <input type="text" id="newCpf" class="search-input-insert-instrutor" placeholder="CPF">
+          <input type="text" id="newNomeInstrutor" class="search-input-insert-instrutor" placeholder="Nome">
+          <input type="text" id="newAula" class="search-input-insert-instrutor" placeholder="Aula">
+          <input type="text" id="newStatusInstrutor" class="search-input-insert-instrutor"
+            placeholder="Status / true of false">
+          <input type="text" id="newCfc" class="search-input-insert-instrutor" placeholder="Cfc">
+          <button onclick="newItemInstrutor()" class="search-button">Adicionar</button>
+        </div>
+      </div>
+      <div class="title-wrapper-about">
+        <p>Tabela referente a </p>
+        <h3>Instrutores</h3>
+      </div>
+      <div class="instrutor-content">
+        <div class="left">
+          <img src="images/about.png" alt="About" />
+        </div>
+        <div class="right">
+          <table id="myTable2">
+            <tr>
+              <th>Id</th>
+              <th>Cpf</th>
+              <th>Aula</th>
+              <th>Status</th>
+              <th>Cfc</th>
+              <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carro" id="carro">
+    <div class="content">
+      <div class="title-wrapper-catalog-insert">
+        <p>Inserir um novo carro</p>
+        <h3>Novo Carro</h3>
+      </div>
+      <div class="content">
+        <div class="filter-card-insert-carro">
+          <input type="text" id="newRenavan" class="search-input-insert" placeholder="Renavan">
+          <input type="text" id="newPlaca" class="search-input-insert" placeholder="Placa">
+          <input type="text" id="newMarca" class="search-input-insert" placeholder="Marca">
+          <input type="text" id="newModelo" class="search-input-insert" placeholder="Modelo">
+          <input type="text" id="newStatusCarro" class="search-input-insert" placeholder="Status / true of false">
+          <input type="text" id="newCfcCarro" class="search-input-insert" placeholder="Cfc">
+          <button onclick="newItemCarro()" class="search-button">Adicionar</button>
+        </div>
+      </div>
+      <div class="title-wrapper-about">
+        <p>Tabela referente a </p>
+        <h3>Carros</h3>
+      </div>
+      <div class="carro-content">
+        <div class="left">
+          <img src="images/about.png" alt="About" />
+        </div>
+        <div class="right">
+          <table id="myTable3">
+            <tr>
+              <th>Id</th>
+              <th>Renavan</th>
+              <th>Placa</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Status</th>
+              <th>Cfc</th>
+              <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="main">
+      <div class="content footer-links">
+        <div class="footer-contact">
+          <h4>Nosso Contato</h4>
+          <h6>+55 21 98888888</h6>
+          <h6>ronanrj@gmail.com.br</h6>
+          <h6>Nome da Rua, Rio de Janeiro RJ</h6>
+        </div>
+      </div>
+    </div>
+    <div class="last">Mvp PUC 2024</div>
+  </footer>
+  <script src="./scripts/scripts.js"></script>
+</body>
+
+</html>
